@@ -37,6 +37,31 @@ function App() {
     {uid:'a105', name:'이순신', age:53, addr:'부산'},
   ]
 
+  //핸들러
+  const clickHandler = function(){
+    alert('확인2');
+  }
+
+  const changeHandler = function(e){
+    console.log(`name: ${e.target.name}, value:${e.target.value}`);
+  }
+
+  const textChangeHandler = function(e){
+    const textNode = document.getElementsByClassName('resultText')[0];
+    textNode.innerText = e.target.value;
+  }
+
+  const submitHandler = function(e){
+    e.preventDefault(); //태그가 가지고 있는 기본이벤트를 초기화(없앰)
+
+    const jsonData = {
+      uid: e.target.uid.value,
+      name: e.target.uid.value,
+      age: e.target.uid.value,
+    }
+    console.log(jsonData);
+  }
+
   return (
     <>
       <h3>2장 React JSX</h3>
@@ -94,9 +119,28 @@ function App() {
 
 
       <h4>JSX 이벤트</h4>
-      
-      <h4>JSX 스타일</h4>
+      <button onClick = {()=>alert('확인!')}>버튼1</button>
+      <button onClick = {clickHandler}>버튼2</button>
 
+      <select name='city' onChange={changeHandler}>
+        <option>서울</option>
+        <option>대전</option>
+      </select>
+
+      <p className='resultText'></p>
+      <input type="text" onChange={textChangeHandler} />
+      
+      <hr/>
+
+      <form onSubmit={submitHandler}>
+        <input type="text" name='uid'/><br/>
+        <input type="text" name='name'/><br/>
+        <input type="text" name='age'/><br/>
+        <input type="submit" value='전송'/><br/>
+      </form>
+
+      <h4>JSX 스타일</h4>
+      <div></div>
     </>
   )
 }
