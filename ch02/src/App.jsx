@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import styled from 'styled-components';
 /*
   날짜 : 2025.06.09.
   이름 : 김태경
@@ -11,6 +11,14 @@ import './App.css'
   <JSX 기본>
 
   */
+
+// 스타일 컴포넌트 정의(현재 잘쓰지 않음)
+const StyledDiv = styled.div`
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background: green;
+`;
 
 function App() {
   let num1 = 1;
@@ -140,7 +148,17 @@ function App() {
       </form>
 
       <h4>JSX 스타일</h4>
-      <div></div>
+      <div style={{
+        width: '100px',
+        height: '100px',
+        border: '1px solid black',
+        background: 'orange'
+
+      }}>box1</div> {/* 지저분한 방식 */}
+
+      <div className='box2'>box2</div> {/* App.css 방식 - 전통적 */}
+      <StyledDiv>box3</StyledDiv> {/* 잘 안쓰는 방식 */}
+      <div className='w-[100px] h-[100px] bg-[red] border'>box4</div> {/* tailwind 사용한 요즘 방식*/}
     </>
   )
 }
