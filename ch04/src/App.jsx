@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import UseRefComponent from './components/UseRefComponent'
 import UseStateComponent from './components/UseStateComponent'
+import UseReducerComponent from './components/UseReducerComponent'
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <h3>4.리액트 훅</h3>
       <UseRefComponent />
       <UseRefComponent />
-
       <UseStateComponent />
+      <UseReducerComponent />
     </>
   )
 }
