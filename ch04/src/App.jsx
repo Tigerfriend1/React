@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import UseRefComponent from './components/UseRefComponent'
-import UseStateComponent from './components/UseStateComponent'
-import UseReducerComponent from './components/UseReducerComponent'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import UseRefComponent from "./components/UseRefComponent";
+import UseStateComponent from "./components/UseStateComponent";
+import UseReducerComponent from "./components/UseReducerComponent";
+import UseMemoComponent from "./components/useMemoComponent";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <UseRefComponent />
       <UseStateComponent />
       <UseReducerComponent />
+      <UseMemoComponent />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
