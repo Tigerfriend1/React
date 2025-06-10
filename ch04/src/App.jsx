@@ -6,6 +6,7 @@ import UseRefComponent from "./components/UseRefComponent";
 import UseStateComponent from "./components/UseStateComponent";
 import UseReducerComponent from "./components/UseReducerComponent";
 import UseMemoComponent from "./components/useMemoComponent";
+import UseCallbackComponent from "./components/UseCallbackComponent";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <UseStateComponent />
       <UseReducerComponent />
       <UseMemoComponent />
+      <UseCallbackComponent />
     </>
   );
 }
