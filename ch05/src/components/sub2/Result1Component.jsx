@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 
 function Result1Component() {
   //URL의 쿼리 매개변수에 접근하기 위한 hook
