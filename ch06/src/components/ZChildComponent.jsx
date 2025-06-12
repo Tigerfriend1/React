@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import CounterContext from "../contexts/CounterContext";
 import useCountStore from "../stores/countStore";
 
