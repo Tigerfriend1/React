@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function UserRegisterComponent() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    uid: "",
+    id: "",
     name: "",
     birth: "",
     age: 0,
@@ -46,8 +46,8 @@ function UserRegisterComponent() {
               <td>
                 <input
                   type="text"
-                  name="uid"
-                  value={user.uid}
+                  name="id"
+                  value={user.id}
                   onChange={changeHandler}
                 />
               </td>
