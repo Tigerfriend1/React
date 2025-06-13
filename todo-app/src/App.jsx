@@ -22,7 +22,8 @@ function App() {
   };
 
   const deleteTodo = (id) => {
-    alert("삭제!!" + id);
+    // alert("삭제!!" + id);
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
   return (
