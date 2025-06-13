@@ -26,12 +26,20 @@ function App() {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id == id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white border border-gray-300 shadow">
       <TodoHeader />
       <TodoInput onAddTodo={addTodo} />
       <TodoStats />
-      <TodoList todos={todos} onDelete={deleteTodo} />
+      <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleTodo} />
       <TodoFooter />
     </div>
   );

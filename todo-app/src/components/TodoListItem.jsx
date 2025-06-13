@@ -1,14 +1,19 @@
-import { Edit2, X } from "lucide-react";
+import { Check, Edit2, X } from "lucide-react";
 import React from "react";
 
-function TodoListItem({ todo, onDelete }) {
+function TodoListItem({ todo, onDelete, onToggle }) {
   return (
     <div
       className={`flex items-center gap-3 p-3 rounded-md border bg-white border-gray-300`}
     >
       <button
+        onClick={() => {
+          onToggle(todo.id);
+        }}
         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center select-none border-gray-300 hover:border-green-400`}
-      ></button>
+      >
+        {todo.completed && <Check size={16} />}
+      </button>
       <span className={`flex-1 cursor-pointer text-gray-800 select-none`}>
         {todo.title}
       </span>

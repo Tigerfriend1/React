@@ -2,7 +2,7 @@ import { Check, Edit2, X } from "lucide-react";
 import React from "react";
 import TodoListItem from "./TodoListItem";
 
-function TodoList({ todos, onDelete }) {
+function TodoList({ todos, onDelete, onToggle }) {
   return (
     <div className="space-y-2">
       <div className="text-center text-gray-500 py-8 select-none">
@@ -10,7 +10,12 @@ function TodoList({ todos, onDelete }) {
       </div>
 
       {todos.map((todo, index) => (
-        <TodoListItem key={index} todo={todo} onDelete={onDelete} />
+        <TodoListItem
+          key={index}
+          todo={todo}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );
