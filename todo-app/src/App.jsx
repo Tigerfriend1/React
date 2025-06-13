@@ -10,10 +10,19 @@ import TodoList from "./components/TodoList";
 import TodoFooter from "./components/TodoFooter";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]); //todos를 배열형식으로 저장
 
   const addTodo = (text) => {
-    setTodos((prev) => [...prev, text]);
+    const todo = {
+      id: Date.now(),
+      title: text,
+      completed: false,
+    };
+    setTodos((prev) => [...prev, todo]);
+  };
+
+  const deleteTodo = (id) => {
+    alert("삭제!!" + id);
   };
 
   return (
@@ -21,7 +30,7 @@ function App() {
       <TodoHeader />
       <TodoInput onAddTodo={addTodo} />
       <TodoStats />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={deleteTodo} />
       <TodoFooter />
     </div>
   );
